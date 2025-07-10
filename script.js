@@ -1,26 +1,38 @@
-console.log("INIT");
+function confirmInput() {
+    // Get the user input
+    const userInput = document.getElementById("userInput").value.trim();
+    const banner = document.getElementById("banner");
+    const outputText = document.getElementById("outputText");
 
-async function hashInput(text) {
-	const encoder = new TextEncoder();
-	const data = encoder.encode(text);
-	const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-	const hashArray = Array.from(new Uint8Array(hashBuffer));
-	const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-	return hashHex;
+    if(userInput===""){
+        banner.style.backgroundColor = "gray"
+        banner.textContent = "Please submit at least something";
+        banner.style.top = "0";
+        outputText.textContent = "";
+    }
+    else if (userInput === "TEST") {
+        banner.style.backgroundColor = "var(--success)"
+        banner.textContent = "Congrats!";
+        banner.style.top = "0";
+        outputText.textContent = "";
+
+    } else {
+        banner.style.backgroundColor = "var(--fail)"
+        banner.textContent = "Try again";
+        banner.style.top = "0";
+        outputText.textContent = "Prüfe deine Lösung";
+    }
+
+
+    setTimeout(() => {
+        banner.style.top = "-50px";
+    }, 3000);
 }
 
-async function confirmInput() {
-	const input = document.getElementById("userInput");
-	const value = input.value;
-	const output = document.getElementById("outputText");
-
-	output.textContent = value || "Nothing was entered.";
-
-	if (value) {
-		const hashed = await hashInput(value);
-		console.log("SHA-256 Hash:", hashed);
-	}
-
-	input.value = "";
-	input.focus();
+async function hashInput(text) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(text);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
 }

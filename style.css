@@ -1,52 +1,49 @@
+:root {
+  --success: #4CAF50;
+  --fail: #E53935;
+}
 body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	margin: 0;
-	font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#banner {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  right: 0;
+  background-color: green;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px 0;
+  transition: top 0.5s ease;
+  z-index: 1000;
 }
 
 .input-container {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-input {
-	padding: 10px;
-	font-size: 16px;
+#userInput {
+  padding: 10px;
+  font-size: 18px;
 }
 
 button {
-	padding: 10px 15px;
-	font-size: 16px;
-	cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
 }
 
 .text-below {
-	margin-top: 20px;
-	font-size: 14px;
-	color: #333;
-	text-align: center;
-}
-#successbanner {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	height: 10%;
-	background-color: rgb(103, 197, 66);
-	font: Arial;
-	align-items: center;
-	justify-content: center;
-}
-#failbanner {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	height: 10%;
-	background-color: rgb(209, 48, 48);
-	align-items: center;
-	justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
 }

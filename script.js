@@ -10,7 +10,7 @@ function confirmInput() {
         banner.style.top = "0";
         outputText.textContent = "";
     }
-    else if (userInput === "TEST") {
+    else if (hashInput(userInput) === "94ee059335e587e501cc4bf90613e0814f00a7b08bc7c648fd865a2af6a22cc2") { // Wer den Hash "systemtisch sucht" hat auch gewonnen :)
         banner.style.backgroundColor = "var(--success)"
         banner.textContent = "Congrats!";
         banner.style.top = "0";

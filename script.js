@@ -1,8 +1,10 @@
-function confirmInput() {
+async function confirmInput() {
     // Get the user input
     const userInput = document.getElementById("userInput").value.trim();
     const banner = document.getElementById("banner");
     const outputText = document.getElementById("outputText");
+
+    const value = await hashInput(userInput);
 
     if(userInput===""){
         banner.style.backgroundColor = "gray"
@@ -10,7 +12,7 @@ function confirmInput() {
         banner.style.top = "0";
         outputText.textContent = "";
     }
-    else if (hashInput(userInput) === "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08") { // Wer den Hash "systemtisch sucht" hat auch gewonnen :)
+    else if (value === "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08") { // Wer den Hash "systemtisch sucht" hat auch gewonnen :)
         banner.style.backgroundColor = "var(--success)"
         banner.textContent = "Congrats!";
         banner.style.top = "0";

@@ -8,13 +8,13 @@ async function confirmInput() {
 
     if(userInput===""){
         banner.style.backgroundColor = "gray"
-        banner.textContent = "Please submit at least something";
+        banner.textContent = "Input darf nicht leer sein";
         banner.style.top = "0";
         outputText.textContent = "";
     }
-    else if (value === "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08") { // Wer den Hash "systemtisch sucht" hat auch gewonnen :)
+    else if (value === "4323ff7415e7ffb95f348731fbda5bb263c68fef5df52cec83625a988917efde") { //alternative Lösung: hash cracken
         banner.style.backgroundColor = "var(--success)"
-        banner.textContent = "Congrats!";
+        banner.textContent = "Glückwunsch!";
         banner.style.top = "0";
         outputText.textContent = "";
 

